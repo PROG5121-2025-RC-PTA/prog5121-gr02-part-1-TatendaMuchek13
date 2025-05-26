@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package project;
+package mainquickchat;
 import javax.swing.JOptionPane;
 import java.util.Scanner;
-import java.util.regex.*;
-////OpenAI [Accessed 13 April 2025] Available at:  https://chat.openai.com/ for regex used in the checkpassword method.
 
+
+// Project is the login class where the user will insert their details.
 public class Project {
 
     
@@ -25,8 +25,8 @@ String name1 ="";
 String surname ="";
 //____________________      
 
-        //Socializer is the name of the chat app.
- JOptionPane.showMessageDialog(null, "Hello new User, Welcome to Socializer.");
+        //QuickChat is the name of the chat app.
+ JOptionPane.showMessageDialog(null, "Hello new User to QuickChat.");
 
     //Small section of the user.
     System.out.println("Please enter your name: ");   
@@ -64,7 +64,7 @@ String surname ="";
  //Username 
  
    while(true){  
-  System.out.println("Create your Socializer username. Your username must have an underscore '_' and be more than 5 characters:");     
+  System.out.println("Create your QuickChat username. Your username must have an underscore '_' and be more than 5 characters:");     
  username = user.nextLine();
  
    
@@ -74,7 +74,7 @@ String surname ="";
  }
  else{System.out.println("Incorrect. Username must have an underscore '_' and be more than 5 characters.");
  }
- } user.close();
+ } 
  //_______________________________________________________________________________________________
    
  //Password
@@ -85,14 +85,16 @@ String surname ="";
  
    
  if (checkpassword(password)){
-       System.out.println("Password now saved. " +username+ " you are officially register on Socializer."  );
+       System.out.println("Password now saved. " +username+ " you are officially register on QuickChat."  );
  break;
  }
  else{System.out.println("Incorrect. Password must have at least 1 capital letter, 1 number, 1 special character(!@#$%^&*()_{}) and be more than 8 characters long.");
  }
- }  user.close();
+ }  
   
-   } 
+            
+        
+    } 
     
  
     public static boolean checkcellnumber(String cellNr){
@@ -129,22 +131,14 @@ String surname ="";
     
     }
   
-  if (!password.matches(".[*!@#$%^&*()_{}.]*")){
-        System.out.println("Password is missing at least one special character.");
+  if (password.matches(".*[!@#$%^&*()_{}.].*")) {
+    return true;
+} else {
+    System.out.println("Password is missing at least one special character.");
     return false;
-    
-    }
-  
-return true;
-      
-      
-      
-      
-      
-      
-      
-      
-      
+}
+
+ 
       
       
       }  
