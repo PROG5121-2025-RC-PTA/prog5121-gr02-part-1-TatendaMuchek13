@@ -27,6 +27,8 @@ public class Message2{
     private String recipient;
     private String text;
     private String messageHash;
+    Object getFlag;
+    
     
     
     public Message2 (String recipient, String text){ 
@@ -36,6 +38,10 @@ public class Message2{
       this.messageNR =++count;
       this.messageHash = createHash();
  
+    }
+
+    Message2(String string, String did_you_get_the_cake, String sent) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public String getMessageID() {
@@ -127,4 +133,36 @@ public static int returnTotalMessage(){
     return count;
 
     }
+
+    Object getFlag() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    String getMessage() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    String getMessage2() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+public class storeMessage {
+    public int id;
+    public String recipient;
+    public String developer;
+    public String message;
+    public String flag;
+
+    public storeMessage( String recipient, String developer, String message, String flag) {
+        this.id = id;
+        this.recipient = recipient;
+        this.developer = developer;
+        this.message = message;
+        this.flag = flag;
+    }
+
+    public String toString() {
+        return "ID: " + id + ", Recipient: " + recipient + ", Message: " + message;
+    }
+
+}
 }

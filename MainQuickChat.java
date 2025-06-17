@@ -14,7 +14,8 @@ public class MainQuickChat {
         // TODO code application logic here
  
 Project one = new Project();
-     int count = 0;
+     
+    int count = 0;
      int messageLimit = 10;
 
     while(true){
@@ -76,7 +77,7 @@ JOptionPane.showMessageDialog(null,"\n\nAction"+msg.printMessageDetails()+action
           break;
           
     case 3:         
-           JOptionPane.showMessageDialog(null, "Total Message Sent:" +Message.returntotalMessage()+ "\nExiting QuickChat.");
+           JOptionPane.showMessageDialog(null, "Total Message Sent:" +Message2.returntotalMessage()+ "\nExiting QuickChat.");
             System.exit(0);
             break;
             
@@ -85,11 +86,35 @@ JOptionPane.showMessageDialog(null,"\n\nAction"+msg.printMessageDetails()+action
             
     }
 }   
+     messageManagement manage = new messageManagement();
+
+       
+        manage.addMessage2(new Message2("+27834557896", "Did you get the cake?", "Sent"));
+        manage.addMessage(new Message2("+27838854567", "Where are you? You are late! I have asked you to be on time.", "Stored"));
+        manage.addMessage(new Message2("+27834484567", "Yohooo, I am at your gate.", "Disregard"));
+        manage.addMessage(new Message2("0838884567", "It is dinner time !", "Sent"));
+        manage.addMessage(new Message2("+27838854567", "Ok, I am leaving without you.", "Stored"));
+
+        
+        System.out.println("Longest Sent Message:\n" + manage.getLongestSentMessage().getMessage2());
+
+        
+        String sampleHash = manage.generateHash("Where are you? You are late! I have asked you to be on time.");
+        System.out.println("\nSearch Result for Hash:\n" + manage.searchByHash(sampleHash));
+
+       
+        manage.deleteByHash(sampleHash);
+        System.out.println("\nMessage deleted. Updated report:");
+
+        manage.displayReport();
+    
     }  
 
     void startApplication() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+  
 
 
     }
